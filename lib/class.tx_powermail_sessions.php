@@ -61,7 +61,7 @@ class tx_powermail_sessions extends tslib_pibase {
 					// then go to confirmation again: checkbox values from oldPiVars got merged again
 					// with this loop, everythings fine
 					foreach ($oldPiVars as $key => $item) {
-						if (!array_key_exists($key, $piVars)) {
+						if (array_key_exists($key, $piVars)) {
 							if (!empty($piVars) && intval($piVars['sendNow']) != 1) {
 								unset($oldPiVars[$key]);
 							}
